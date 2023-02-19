@@ -1,9 +1,9 @@
 import webpack from 'webpack';
 import { BuildOptions } from './types/config';
-import { buildCSSloaders } from './loaders/buildCSSLoaders';
+import { buildCSSloader } from './loaders/buildCSSLoader';
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
-    const cssLoader = buildCSSloaders(isDev);
+    const cssLoader = buildCSSloader(isDev);
 
     const typescriptLoader = {
         test: /\.tsx?$/,
