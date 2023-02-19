@@ -28,7 +28,7 @@ describe('classNames', () => {
         )).toBe(expected);
     });
 
-    test('with mod undefined', () => {
+    test('with mode undefined', () => {
         const expected = 'someClass class1 class2 hovered';
         expect(classNames(
             'someClass',
