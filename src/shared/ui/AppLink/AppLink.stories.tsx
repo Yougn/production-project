@@ -63,4 +63,3 @@ RedDark.args = {
 };
 
 RedDark.decorators = [ThemeDecorator(Theme.DARK)];
-

@@ -17,4 +17,4 @@ export function buildCSSloader(isDev: boolean) {
             'sass-loader',
         ],
     };
-};
+}
