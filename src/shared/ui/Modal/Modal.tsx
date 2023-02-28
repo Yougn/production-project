@@ -32,9 +32,9 @@ export const Modal = (props: ModalProps) => {
 
     useEffect(() => {
         if (isOpen) {
-            setIsMounted(true) 
+            setIsMounted(true);
         }
-    }, [isOpen])
+    }, [isOpen]);
 
     const closeHandler = useCallback(() => {
         if (onClose) {
