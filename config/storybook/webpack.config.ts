@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 import path from 'path';
-import webpack, { RuleSetRule } from 'webpack';
+import webpack, { DefinePlugin, RuleSetRule } from 'webpack';
 import { buildCSSloader } from '../build/loaders/buildCSSLoader';
 import { BuildPaths } from '../build/types/config';
 
@@ -23,11 +23,14 @@ export default ({ config }: {config: webpack.Configuration}) => {
         return rule;
     });
 
-    config.module.rules.push({
+    config.module?.rules.push({
         test: /\.svg$/,
         use: ['@svgr/webpack'],
     });
-    config.module.rules.push(buildCSSloader(true));
+    config.module?.rules.push(buildCSSloader(true));
 
+    config.plugins?.push(new DefinePlugin({
+        __IS_DEV__: true,
+    }));
     return config;
 };
