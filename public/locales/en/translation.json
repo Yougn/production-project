@@ -20,5 +20,15 @@
   "Выйти": "Exit",
   "PROFILE PAGE": "PROFILE PAGE",
   "Профиль": "Profile",
-  "Редактировать": "Edit"
+  "Редактировать": "Edit",
+  "Произошла ошибка при загрузке профиля": "Error loading",
+  "Попробуйте обновить страницу": "Try reload page",
+  "Отменить": "Cancel",
+  "Сохранить": "Save",
+  "Ваш возраст": "Age",
+  "Ваш город": "City",
+  "Введите имя пользователя": "Enter username",
+  "Введите ссылку на аватар": "Enter link on avatar",
+  "Укажите валюту": "Specify the currency",
+  "Укажите  страну": "Indicate the country"
 }
