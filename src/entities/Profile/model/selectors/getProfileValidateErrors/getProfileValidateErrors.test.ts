@@ -13,7 +13,7 @@ describe('getProfileValidateErrors.test', () => {
                 ],
             },
         };
-        expect(getProfileValidateErrors(state as StateSchema)).toEqual( [
+        expect(getProfileValidateErrors(state as StateSchema)).toEqual([
             ValidateProfileError.INCORRECT_AGE,
             ValidateProfileError.INCORRECT_COUNTRY,
             ValidateProfileError.NO_DATA,
