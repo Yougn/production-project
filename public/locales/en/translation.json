@@ -35,5 +35,7 @@
   "Некорректный регион": "Incorrect region",
   "Данные не указаны": "Data not specified",
   "Имя и фамилия обязательны": "Name and Surname is required",
-  "Некорректный возраст": "Incorrect age"
+  "Некорректный возраст": "Incorrect age",
+  "Статья не найдена": "Article is not found",
+  "Произошла ошибка при загрузке статьи": "An error occurred while loading the article"
 }
