@@ -35,8 +35,8 @@ NormalDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const CircleDark = Template.bind({});
 CircleDark.args = {
-    height: 100,
-    width: 100,
     border: '50%',
+    width: 100,
+    height: 100,
 };
 CircleDark.decorators = [ThemeDecorator(Theme.DARK)];
