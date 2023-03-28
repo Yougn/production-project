@@ -1,41 +1,31 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { CommentList } from './CommentList';
+import { CommentCard } from './CommentCard';
 
 export default {
-    title: 'entities/Comment/CommentList',
-    component: CommentList,
+    title: 'entities/Comment/CommentCard',
+    component: CommentCard,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof CommentList>;
+} as ComponentMeta<typeof CommentCard>;
 
-const Template: ComponentStory<typeof CommentList> = (args) => <CommentList {...args} />;
+const Template: ComponentStory<typeof CommentCard> = (args) => <CommentCard {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {
-    comments: [{
+    comment: {
         id: '1',
         text: 'Hello world',
         user: { id: 'i', username: 'Vasya' },
     },
-    {
-        id: '2',
-        text: 'Hello world',
-        user: { id: 'i', username: 'Vanya' },
-    }],
 };
 
 export const Loading = Template.bind({});
 Loading.args = {
-    comments: [{
+    comment: {
         id: '1',
         text: 'Hello world',
         user: { id: 'i', username: 'Vasya' },
     },
-    {
-        id: '2',
-        text: 'Hello world',
-        user: { id: 'i', username: 'Vanya' },
-    }],
     isLoading: true,
 };
