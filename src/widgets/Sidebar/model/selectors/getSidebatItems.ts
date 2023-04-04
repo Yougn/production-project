@@ -27,6 +27,7 @@ export const getSidebatItems = createSelector(
         if (userData) {
             sidebarItemsList.push(
                 {
+                    // eslint-disable-next-line no-unsafe-optional-chaining
                     path: RoutePath.profile + userData?.id,
                     Icon: ProfileIcon,
                     text: 'Профиль',

@@ -30,11 +30,12 @@ export const CommentList = memo((props: CommentListProps) => {
     return (
         <div className={classNames(cls.commentList, {}, [className])}>
             {comments?.length
-                ? comments?.map((comment) => (
+                ? comments?.map((comment, index) => (
                     <CommentCard
                         isLoading={isLoading}
                         className={cls.comment}
                         comment={comment}
+                        key={index}
                     />
                 ))
                 : <Text text={t('Комментарии отсутствуют')} /> }
