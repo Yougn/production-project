@@ -51,5 +51,18 @@
   },
   "Далее": "More",
   "Назад": "Back to list",
-  "Назад к списку": "Back to list"
+  "Назад к списку": "Back to list",
+  "Сортировать по": "Sort by",
+  "Сортировать ПО": "Sort BY",
+  "Поиск": "Search",
+  "возрастанию": "ascending",
+  "убыванию": "descending",
+  "дате создания": "creation date",
+  "названию": "title",
+  "просмотрам": "views",
+  "Айти": "IT",
+  "Все статьи": "All articles",
+  "Экономика": "ECONOMICS",
+  "Наука": "SCIENCE",
+  "Статьи не найдены": "Articles not found"
 }
