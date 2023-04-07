@@ -1,3 +1,4 @@
+import { articlesDetailsPageReducer } from './../../../../pages/ArticleDetailsPage/model/slices/index';
 import {
     CombinedState, configureStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
@@ -17,6 +18,7 @@ export function createReduxStore(
         counter: counterReducer,
         user: userReducer,
         scrollSave: scrollSaveReducer,
+        articleDetailsPage: articlesDetailsPageReducer,
     };
 
     const reducerManager = createReducerManager(rootReducer);
