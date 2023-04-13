@@ -1,5 +1,5 @@
 import { StateSchema } from 'app/providers/StoreProvider';
-import { getScrollByPath, scrollSaveActions } from 'feachers/ScrollSave';
+import { getScrollByPath, scrollSaveActions } from 'features/ScrollSave';
 import {
     memo, MutableRefObject, ReactNode, UIEvent, useRef,
 } from 'react';
@@ -17,6 +17,8 @@ interface PageProps {
    children?: ReactNode;
    onScrollEnd?: () => void;
 }
+
+export const PAGE_ID = 'PAGE_ID';
 
 export const Page = memo((props: PageProps) => {
     const { className, children, onScrollEnd } = props;
@@ -50,6 +52,7 @@ export const Page = memo((props: PageProps) => {
             ref={wrapperRef}
             onScroll={onScroll}
             className={classNames(cls.page, {}, [className])}
+            id={PAGE_ID}
         >
             {children}
             {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}

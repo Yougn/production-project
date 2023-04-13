@@ -22,6 +22,7 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
+        'yougn-plugin',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -42,7 +43,14 @@ module.exports = {
         'i18next/no-literal-string': ['error',
             {
                 markupOnly: true,
-                ignoreAttribute: ['data-testid', 'to', 'target'],
+                ignoreAttribute: ['data-testid',
+                    'to',
+                    'target',
+                    'justify',
+                    'align',
+                    'gap',
+                    'direction',
+                ],
             }],
         'linebreak-style': 0,
         'max-len': 'off',
@@ -53,6 +61,7 @@ module.exports = {
         'react/no-array-index-key': 'off',
         'no-param-reassign': 'off',
         'no-undef': 'off',
+        'yougn-plugin/path-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,
