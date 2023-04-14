@@ -51,6 +51,7 @@ module.exports = {
                     'gap',
                     'direction',
                     'role',
+                    'as',
                 ],
             }],
         'linebreak-style': 0,
