@@ -15,23 +15,6 @@ const MainPage = () => {
     return (
         <Page>
             {t('Главная страница')}
-            <div>1</div>
-            <HStack>
-                <div>2</div>
-                <ListBox
-                    defaultvalue={t('Выберите значение')}
-                    onChange={() => {}}
-                    value={undefined}
-                    items={[
-                        { value: '1', content: 1 },
-                        { value: '2', content: 2 },
-                        { value: '3', content: 3 },
-                    ]}
-                />
-            </HStack>
-            <div>3</div>
-            <div>4</div>
-            <div>5</div>
         </Page>
     );
 };
