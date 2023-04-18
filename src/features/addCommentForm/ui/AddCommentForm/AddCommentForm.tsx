@@ -50,11 +50,9 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
                     theme={ButtonTheme.OUTLINE}
                 >
                     {t('Отправить')}
-
                 </Button>
             </HStack>
         </DynamicModuleLoader>
-
     );
 });
 

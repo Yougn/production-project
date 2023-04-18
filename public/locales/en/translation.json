@@ -72,5 +72,7 @@
   "Ulbi IV App": "Ulbi IV App",
   "Создать статью": "Create article",
   "Выберите значение": "Choose a value",
-  "Профиль пользователя": "User profile"
+  "Профиль пользователя": "User profile",
+  "Ошибка при загрузке сети": "Network error",
+  "Профиль не найден": "Profile not found"
 }
