@@ -74,5 +74,8 @@
   "Выберите значение": "Choose a value",
   "Профиль пользователя": "User profile",
   "Ошибка при загрузке сети": "Network error",
-  "Профиль не найден": "Profile not found"
+  "Профиль не найден": "Profile not found",
+  "Админка": "Admin",
+  "У вас нет доступа": "You don't have access",
+  "У вас нет доступа к этой странице": "You do not have access to this page"
 }

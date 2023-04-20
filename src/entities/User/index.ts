@@ -1,15 +1,15 @@
-import { User, UserSchema } from './model/types/user';
-import { userActions, userReducer } from './model/slice/userSlice';
-import { getUserAuthData } from './model/selectors/getUserAuthData/getUserAuthData';
-import { getUserInited } from './model/selectors/getUserInited/getUserInited';
+export { getUserAuthData } from './model/selectors/getUserAuthData/getUserAuthData';
+export { getUserInited } from './model/selectors/getUserInited/getUserInited';
 
 export {
     User,
     UserSchema,
-};
+    UserRole,
+} from './model/types/user';
 
 export {
     userActions,
     userReducer,
-};
-export { getUserAuthData, getUserInited };
+} from './model/slice/userSlice';
+
+export { isUserAdmin, isUserManager, getUserRoles } from './model/selectors/roleSelector/roleSelector';
