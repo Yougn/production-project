@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
@@ -22,7 +22,7 @@ import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
    className?: string;
-   id: string;
+   id?: string;
 }
 
 const reducers: ReducersList = {
