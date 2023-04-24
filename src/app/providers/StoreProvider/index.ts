@@ -5,8 +5,11 @@ import { StoreProvider } from './ui/StoreProvider';
 export {
     StoreProvider,
     createReduxStore,
-    AppDispatch,
     StateSchema,
     ReduxStoreWithManager,
     ThunkConfig,
+};
+
+export type {
+    AppDispatch,
 };

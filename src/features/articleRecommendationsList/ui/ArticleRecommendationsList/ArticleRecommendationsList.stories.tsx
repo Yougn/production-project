@@ -2,8 +2,8 @@ import React from 'react';
 import withMock from 'storybook-addon-mock';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 import { Article } from 'entities/Article';
+import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 
 const article: Article = {
     id: '1',
@@ -35,10 +35,10 @@ Normal.decorators = [StoreDecorator({})];
 Normal.parameters = {
     mockData: [
         {
-            url: __API__ + '/articles?_limit=3',
+            url: `${__API__}/articles?_limit=3`,
             method: 'GET',
             status: 200,
-            response: [{...article, id: '1'}, { ...article, id: '2'}, { ...article, id: '3'}],
+            response: [{ ...article, id: '1' }, { ...article, id: '2' }, { ...article, id: '3' }],
         },
     ],
 };
