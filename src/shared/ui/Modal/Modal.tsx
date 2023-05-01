@@ -1,11 +1,10 @@
-import { useTheme } from 'app/providers/ThemeProvider';
-import {
-    ReactNode, useCallback, useRef, useState, useEffect, MutableRefObject,
-} from 'react';
+import { ReactNode } from 'react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import { useTheme } from 'app/providers/ThemeProvider';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
+import { useModal } from '../hooks/useModal/useModal';
 
 interface ModalProps {
   className?: string;
@@ -25,58 +24,26 @@ export const Modal = (props: ModalProps) => {
         onClose,
         lazy,
     } = props;
-
-    const [isClosing, setIsClosing] = useState(false);
-    const [isMounted, setIsMounted] = useState(false);
-    const timeRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
+    const {
+        isClosing,
+        isMounted,
+        close,
+    } = useModal({ animationDelay: ANIMATION_DELAY, onClose, isOpen });
     const { theme } = useTheme();
-
-    useEffect(() => {
-        if (isOpen) {
-            setIsMounted(true);
-        }
-    }, [isOpen]);
-
-    const closeHandler = useCallback(() => {
-        if (onClose) {
-            setIsClosing(true);
-            timeRef.current = setTimeout(() => {
-                onClose();
-                setIsClosing(false);
-            }, ANIMATION_DELAY);
-        }
-    }, [onClose]);
-
-    const onKeyDown = useCallback((e: KeyboardEvent) => {
-        if (e.key === 'Escape') {
-            closeHandler();
-        }
-    }, [closeHandler]);
 
     const mods: Mods = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };
 
-    useEffect(() => {
-        if (isOpen) {
-            window.addEventListener('keydown', onKeyDown);
-        }
-
-        return () => {
-            clearTimeout(timeRef.current);
-            window.removeEventListener('keydown', onKeyDown);
-        };
-    }, [isOpen, onKeyDown]);
-
-    if (isOpen && !isMounted) {
+    if (lazy && !isMounted) {
         return null;
     }
 
     return (
         <Portal>
             <div className={classNames(cls.Modal, mods, [className, theme, 'app_modal'])}>
-                <Overlay onClick={closeHandler} />
+                <Overlay onClick={close} />
                 <div
                     className={cls.content}
                 >
