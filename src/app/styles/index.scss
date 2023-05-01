@@ -4,6 +4,13 @@
 @import url("./themes/dark.scss");
 @import url("./themes/orange.scss");
 
+.app,
+.app_modal,
+.app_drawer {
+    font: var(--font-m);
+    color: var(--primary-color);
+}
+
 body {
     font: var(--font-m);
     color: var(--primary-color);
