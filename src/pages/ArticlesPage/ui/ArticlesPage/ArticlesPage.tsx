@@ -1,10 +1,10 @@
 import { FC, memo, useCallback } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/ui/hooks/useAppDispatch/useAppDispatch';
-import { useInitialEffect } from 'shared/ui/hooks/useInitialEffect/useInitialEffect';
-import { Page } from 'widgets/Page/Page';
 import { useSearchParams } from 'react-router-dom';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/ui/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from '@/shared/ui/hooks/useInitialEffect/useInitialEffect';
+import { Page } from '@/widgets/Page/Page';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
