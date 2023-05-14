@@ -10,7 +10,7 @@ import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
 import { HStack } from '@/shared/ui/Stack';
 import { Text, TextTheme } from '@/shared/ui/Text/Text';
 import { NotificationButton } from '@/features/NotificationButton';
-import { AvatarDropdown } from '@/features/avatarDropDown/ui/avatarDropdown/AvatarDropdown';
+import { AvatarDropdown } from '@/features/AvatarDropDown';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {

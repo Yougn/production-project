@@ -1,9 +1,10 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { ArticleTypeTabs, ArticleViewSelector } from '@/entities/Article';
-import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article/model/types/article';
-import { ArticleSortSelector } from '@/entities/Article/ui/ArticleSortSelector/ArticleSortSelector';
+import {
+    ArticleTypeTabs, ArticleViewSelector, ArticleView, ArticleSortField,
+    ArticleType, ArticleSortSelector,
+} from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Card } from '@/shared/ui/Card/Card';
 import { useAppDispatch } from '@/shared/ui/hooks/useAppDispatch/useAppDispatch';

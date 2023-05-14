@@ -6,7 +6,7 @@ export type {
     UserSchema,
 } from './model/types/user';
 
-export type {
+export {
     UserRole,
 } from './model/consts/consts';
 
