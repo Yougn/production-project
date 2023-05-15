@@ -17,7 +17,7 @@ import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleC
 import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from '../../model/selectors/articleDetails';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
-import { articleDetailsReducer } from '../../model/slice/articleSlice';
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
