@@ -46,11 +46,18 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'yougn-plugin/path-checker': ['error', { alias: '@' }],
+        'yougn-plugin/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+            },
+        ],
         'yougn-plugin/public-api-imports': [
             'error',
             {
                 alias: '@',
-                testFilesPatterns: ['**/*.test.ts', '**/*.story.ts', '**/StoreDecorator.tsx'],
+                testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
             },
         ],
     },
