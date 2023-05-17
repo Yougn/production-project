@@ -1,11 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from '@/shared/ui/hooks/useAppDispatch/useAppDispatch';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { useInitialEffect } from '@/shared/ui/hooks/useInitialEffect/useInitialEffect';
 import { Currency } from '@/entities/Currency';
-import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { Text, TextTheme } from '@/shared/ui/Text';
 import { Country } from '@/entities/Country';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { ProfileCard } from '@/entities/Profile';
@@ -19,6 +17,8 @@ import { getProfileValidateErrors } from '../../model/selectors/getProfileValida
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader/EditableProfileCardHeader';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 interface EditableProfileCardProps {
     className?: string;

@@ -3,14 +3,15 @@ import {
 } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
-import { useInfiniteScroll } from '@/shared/ui/hooks/useInfiniteScroll/useInfiniteScroll';
 import { getScrollByPath, scrollSaveActions } from '@/features/ScrollSave';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { useAppDispatch } from '@/shared/ui/hooks/useAppDispatch/useAppDispatch';
-import { useInitialEffect } from '@/shared/ui/hooks/useInitialEffect/useInitialEffect';
-import { useTrottle } from '@/shared/ui/hooks/useTrottle/useTrottle';
+
 import cls from './Page.module.scss';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useTrottle } from '@/shared/lib/hooks/useTrottle/useTrottle';
 
 interface PageProps {
    className?: string;

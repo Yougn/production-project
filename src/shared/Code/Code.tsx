@@ -1,7 +1,7 @@
 /* eslint-disable i18next/no-literal-string */
 import { memo, ReactNode, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
 import CopyIcon from '@/shared/assets/icons/copy.svg';
 import cls from './Code.module.scss';
 

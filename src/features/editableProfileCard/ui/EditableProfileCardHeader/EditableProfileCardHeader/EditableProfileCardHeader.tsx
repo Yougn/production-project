@@ -3,14 +3,14 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import { useAppDispatch } from '@/shared/ui/hooks/useAppDispatch/useAppDispatch';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 import { profileActions } from '../../../model/slice/profileSlice';
 import { updateProfileData } from '../../../model/services/updateProfileData/updateProfileData';
 import { getProfileReadonly } from '../../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { getProfileData } from '../../../model/selectors/getProfileData/getProfileData';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 interface EditableProfileCardHeaderProps {
    className?: string;
