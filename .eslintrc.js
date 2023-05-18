@@ -13,7 +13,7 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'yougn-plugin'],
+    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'yougn-plugin', 'unused-imports'],
     rules: {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
@@ -45,6 +45,7 @@ module.exports = {
         'react/no-array-index-key': 'off',
         'no-param-reassign': 'off',
         'no-undef': 'off',
+        'unused-imports/no-unused-imports': 'error',
         'yougn-plugin/path-checker': ['error', { alias: '@' }],
         'yougn-plugin/layer-imports': [
             'error',
