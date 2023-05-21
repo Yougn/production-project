@@ -11,7 +11,7 @@ import { Text, TextTheme } from '@/shared/ui/Text';
 import { NotificationButton } from '@/features/NotificationButton';
 import { AvatarDropdown } from '@/features/AvatarDropDown';
 import cls from './Navbar.module.scss';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleCreate } from '@/shared/const/router';
 
 interface NavbarProps {
     className?: string;
@@ -35,7 +35,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             <header className={classNames(cls.navbar, {}, [className])}>
                 <Text className={cls.appName} title={t('Ulbi IV App')} theme={TextTheme.INVERTED} />
                 <AppLink
-                    to={RoutePath.article_create}
+                    to={getRouteArticleCreate()}
                     theme={AppLinkTheme.SECONDARY}
                     className={cls.createBtn}
                 >
