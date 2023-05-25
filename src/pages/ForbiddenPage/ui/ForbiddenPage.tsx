@@ -1,12 +1,15 @@
 import { useTranslation } from 'react-i18next';
+import { Page } from '@/widgets/Page';
 
 const ForbiddenPage = () => {
     const { t, i18n } = useTranslation('about');
 
     return (
-        <div>
+        <Page
+            data-testid="ForbiddenPage"
+        >
             {t('У вас нет доступа к этой странице')}
-        </div>
+        </Page>
     );
 };
 

@@ -1,12 +1,13 @@
 import { useTranslation } from 'react-i18next';
+import { Page } from '@/widgets/Page';
 
 const AboutPage = () => {
     const { t, i18n } = useTranslation('about');
 
     return (
-        <div>
+        <Page data-testid="AboutPage">
             {t('О сайте')}
-        </div>
+        </Page>
     );
 };
 
