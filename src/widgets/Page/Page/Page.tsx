@@ -11,7 +11,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useTrottle } from '@/shared/lib/hooks/useTrottle/useTrottle';
-import { TestProps } from '@/shared/types/test';
+import { TestProps } from '@/shared/types/tests';
 
 interface PageProps extends TestProps {
    className?: string;

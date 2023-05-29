@@ -1,6 +1,6 @@
 import { memo, Suspense, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { AddCommentForm } from '@/features/AddCommentForm';
 import { CommentList } from '@/entities/Comment';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -12,6 +12,7 @@ import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 interface ArticleDetailsCommentsProps {
    className?: string;
@@ -24,7 +25,7 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
 
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
