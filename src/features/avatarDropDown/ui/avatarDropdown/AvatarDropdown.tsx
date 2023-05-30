@@ -1,27 +1,27 @@
-import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
+import React, { memo, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-    getUserAuthData, isUserAdmin, isUserManager, userActions,
-} from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Dropdown } from '@/shared/ui/Popups';
-import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
+import {
+    getUserAuthData, isUserAdmin, isUserManager, userActions,
+} from '@/entities/User';
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 
-interface avatarDropdownProps {
-   className?: string;
+interface AvatarDropdownProps {
+    className?: string;
 }
 
-export const AvatarDropdown = memo((props: avatarDropdownProps) => {
+export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
     const { className } = props;
     const { t } = useTranslation();
     const dispatch = useDispatch();
-    const authData = useSelector(getUserAuthData);
     const isAdmin = useSelector(isUserAdmin);
     const isManager = useSelector(isUserManager);
+    const authData = useSelector(getUserAuthData);
 
-    const onLogOut = useCallback(() => {
+    const onLogout = useCallback(() => {
         dispatch(userActions.logout());
     }, [dispatch]);
 
@@ -38,7 +38,7 @@ export const AvatarDropdown = memo((props: avatarDropdownProps) => {
             items={[
                 ...(isAdminPanelAvailable ? [{
                     content: t('Админка'),
-                    href: getRouteAdminPanel(),
+                    href: getRouteAdmin(),
                 }] : []),
                 {
                     content: t('Профиль'),
@@ -46,15 +46,10 @@ export const AvatarDropdown = memo((props: avatarDropdownProps) => {
                 },
                 {
                     content: t('Выйти'),
-                    onClick: onLogOut,
-                }]}
-            trigger={(
-                <Avatar
-                    size={30}
-                    src={authData.avatar}
-                    fallbackInverted
-                />
-            )}
+                    onClick: onLogout,
+                },
+            ]}
+            trigger={<Avatar fallbackInverted size={30} src={authData.avatar} />}
         />
     );
 });
