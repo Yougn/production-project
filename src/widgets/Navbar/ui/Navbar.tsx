@@ -9,7 +9,7 @@ import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { NotificationButton } from '@/features/NotificationButton';
-import { AvatarDropdown } from '@/features/AvatarDropDown';
+import { AvatarDropdown } from '@/features/avatarDropDown';
 import cls from './Navbar.module.scss';
 import { getRouteArticleCreate } from '@/shared/const/router';
 
