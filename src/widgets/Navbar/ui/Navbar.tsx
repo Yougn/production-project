@@ -1,7 +1,6 @@
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { AvatarDropdown } from '@/features/avatarDropdown';
 import { LoginModal } from '@/features/AuthByUsername';
 import { getUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -12,6 +11,7 @@ import { Text, TextTheme } from '@/shared/ui/Text';
 import { NotificationButton } from '@/features/NotificationButton';
 import cls from './Navbar.module.scss';
 import { getRouteArticleCreate } from '@/shared/const/router';
+import { AvatarDropdownP } from '@/features/avatarDropdown';
 
 interface NavbarProps {
     className?: string;
@@ -43,7 +43,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 </AppLink>
                 <HStack gap="16" className={cls.actions}>
                     <NotificationButton />
-                    <AvatarDropdown />
+                    <AvatarDropdownP />
                 </HStack>
             </header>
         );
