@@ -11,7 +11,8 @@ import { Text, TextTheme } from '@/shared/ui/Text';
 import { NotificationButton } from '@/features/NotificationButton';
 import cls from './Navbar.module.scss';
 import { getRouteArticleCreate } from '@/shared/const/router';
-// import { AvatarDropdown } from '@/features/avatarDropdown';
+// eslint-disable-next-line yougn-plugin/public-api-imports
+import { AvatarDropdown } from '@/features/avatarDropdown/ui/AvatarDropdown/AvatarDropdown';
 
 interface NavbarProps {
     className?: string;
@@ -43,7 +44,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 </AppLink>
                 <HStack gap="16" className={cls.actions}>
                     <NotificationButton />
-                    {/* <AvatarDropdown /> */}
+                    <AvatarDropdown />
                 </HStack>
             </header>
         );
