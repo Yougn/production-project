@@ -11,7 +11,7 @@ import { Text, TextTheme } from '@/shared/ui/Text';
 import { NotificationButton } from '@/features/NotificationButton';
 import cls from './Navbar.module.scss';
 import { getRouteArticleCreate } from '@/shared/const/router';
-import { AvatarDropdownP } from '@/features/avatarDropdown';
+import { AvatarDropdown } from '@/features/avatarDropdown';
 
 interface NavbarProps {
     className?: string;
@@ -43,7 +43,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 </AppLink>
                 <HStack gap="16" className={cls.actions}>
                     <NotificationButton />
-                    <AvatarDropdownP />
+                    <AvatarDropdown />
                 </HStack>
             </header>
         );
