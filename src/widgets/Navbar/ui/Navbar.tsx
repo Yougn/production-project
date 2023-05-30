@@ -11,7 +11,7 @@ import { Text, TextTheme } from '@/shared/ui/Text';
 import { NotificationButton } from '@/features/NotificationButton';
 import cls from './Navbar.module.scss';
 import { getRouteArticleCreate } from '@/shared/const/router';
-import { AvatarDropdown } from '@/features/avatarDropdown';
+import { AvatarDropdown } from '@/features/AvatarDropdown';
 
 interface NavbarProps {
     className?: string;
