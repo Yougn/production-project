@@ -33,7 +33,11 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     if (authData) {
         return (
             <header className={classNames(cls.navbar, {}, [className])}>
-                <Text className={cls.appName} title={t('Ulbi IV App')} theme={TextTheme.INVERTED} />
+                <Text
+                    className={cls.appName}
+                    title={t('Ulbi IV App')}
+                    theme={TextTheme.INVERTED}
+                />
                 <AppLink
                     to={getRouteArticleCreate()}
                     theme={AppLinkTheme.SECONDARY}
@@ -59,10 +63,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 {t('Войти')}
             </Button>
             {isAuthModal && (
-                <LoginModal
-                    isOpen={isAuthModal}
-                    onClose={onCloseModal}
-                />
+                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
             )}
         </header>
     );

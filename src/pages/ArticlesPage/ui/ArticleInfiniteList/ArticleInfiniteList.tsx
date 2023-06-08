@@ -4,10 +4,14 @@ import { useSelector } from 'react-redux';
 import { ArticleList } from '@/entities/Article';
 import { Text } from '@/shared/ui/Text';
 import { getArticles } from '../../model/slices/articlesPageSlice';
-import { getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView } from '../../model/selectors/articlesPageSelectors';
+import {
+    getArticlesPageError,
+    getArticlesPageIsLoading,
+    getArticlesPageView,
+} from '../../model/selectors/articlesPageSelectors';
 
 interface ArticleInfiniteListProps {
-   className?: string;
+    className?: string;
 }
 
 export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {

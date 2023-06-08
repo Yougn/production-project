@@ -21,7 +21,6 @@ Row.args = {
             <div>first</div>
         </>
     ),
-
 };
 
 export const RowGap4 = Template.bind({});
@@ -82,7 +81,6 @@ Column.args = {
             <div>first</div>
         </>
     ),
-
 };
 
 export const ColumnGap16 = Template.bind({});
@@ -96,7 +94,6 @@ ColumnGap16.args = {
             <div>first</div>
         </>
     ),
-
 };
 
 export const ColumnAlignEnd = Template.bind({});
@@ -110,5 +107,4 @@ ColumnAlignEnd.args = {
             <div>first</div>
         </>
     ),
-
 };

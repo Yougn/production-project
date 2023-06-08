@@ -11,7 +11,9 @@ export default {
     },
 } as ComponentMeta<typeof AdminPanelPage>;
 
-const Template: ComponentStory<typeof AdminPanelPage> = (args: any) => <AdminPanelPage {...args} />;
+const Template: ComponentStory<typeof AdminPanelPage> = (args: any) => (
+    <AdminPanelPage {...args} />
+);
 
 export const Primary = Template.bind({});
 

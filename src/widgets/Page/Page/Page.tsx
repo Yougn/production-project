@@ -1,6 +1,4 @@
-import {
-    memo, MutableRefObject, ReactNode, UIEvent, useRef,
-} from 'react';
+import { memo, MutableRefObject, ReactNode, UIEvent, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { getScrollByPath, scrollSaveActions } from '@/features/ScrollSave';
@@ -14,9 +12,9 @@ import { useTrottle } from '@/shared/lib/hooks/useTrottle/useTrottle';
 import { TestProps } from '@/shared/types/tests';
 
 interface PageProps extends TestProps {
-   className?: string;
-   children?: ReactNode;
-   onScrollEnd?: () => void;
+    className?: string;
+    children?: ReactNode;
+    onScrollEnd?: () => void;
 }
 
 export const PAGE_ID = 'PAGE_ID';
@@ -27,8 +25,8 @@ export const Page = memo((props: PageProps) => {
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
     const { pathname } = useLocation();
     const dispatch = useAppDispatch();
-    const scrollPosition = useSelector(
-        (state: StateSchema) => getScrollByPath(state, pathname),
+    const scrollPosition = useSelector((state: StateSchema) =>
+        getScrollByPath(state, pathname),
     );
 
     useInfiniteScroll({
@@ -42,10 +40,12 @@ export const Page = memo((props: PageProps) => {
     });
 
     const onScroll = useTrottle((e: UIEvent<HTMLDivElement>) => {
-        dispatch(scrollSaveActions.setScrollPosition({
-            position: e.currentTarget.scrollTop,
-            path: pathname,
-        }));
+        dispatch(
+            scrollSaveActions.setScrollPosition({
+                position: e.currentTarget.scrollTop,
+                path: pathname,
+            }),
+        );
     }, 500);
 
     return (
@@ -57,7 +57,9 @@ export const Page = memo((props: PageProps) => {
             data-testid={props['data-testid'] ?? 'Page'}
         >
             {children}
-            {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
+            {onScrollEnd ? (
+                <div className={cls.trigger} ref={triggerRef} />
+            ) : null}
         </main>
     );
 });

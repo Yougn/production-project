@@ -8,18 +8,21 @@ import cls from './ArticleViewSelector.module.scss';
 import { ArticleView } from '@/entities/Article';
 
 interface ArticleViewSelectorProps {
-   className?: string;
-   view: ArticleView;
-   onViewClick?: (view: ArticleView) => void;
+    className?: string;
+    view: ArticleView;
+    onViewClick?: (view: ArticleView) => void;
 }
 
-const viewTypes = [{
-    view: ArticleView.SMALL,
-    icon: TiledIcon,
-}, {
-    view: ArticleView.BIG,
-    icon: ListIcon,
-}];
+const viewTypes = [
+    {
+        view: ArticleView.SMALL,
+        icon: TiledIcon,
+    },
+    {
+        view: ArticleView.BIG,
+        icon: ListIcon,
+    },
+];
 
 export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
     const { className, view, onViewClick } = props;
@@ -38,7 +41,9 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
                 >
                     <Icon
                         Svg={viewType.icon}
-                        className={classNames('', { [cls.notselected]: viewType.view !== view })}
+                        className={classNames('', {
+                            [cls.notselected]: viewType.view !== view,
+                        })}
                     />
                 </Button>
             ))}

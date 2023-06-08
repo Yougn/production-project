@@ -9,33 +9,39 @@ export default {
     },
 } as ComponentMeta<typeof CommentList>;
 
-const Template: ComponentStory<typeof CommentList> = (args) => <CommentList {...args} />;
+const Template: ComponentStory<typeof CommentList> = (args) => (
+    <CommentList {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {
-    comments: [{
-        id: '1',
-        text: 'Hello world',
-        user: { id: 'i', username: 'Vasya' },
-    },
-    {
-        id: '2',
-        text: 'Hello world',
-        user: { id: 'i', username: 'Vanya' },
-    }],
+    comments: [
+        {
+            id: '1',
+            text: 'Hello world',
+            user: { id: 'i', username: 'Vasya' },
+        },
+        {
+            id: '2',
+            text: 'Hello world',
+            user: { id: 'i', username: 'Vanya' },
+        },
+    ],
 };
 
 export const Loading = Template.bind({});
 Loading.args = {
-    comments: [{
-        id: '1',
-        text: 'Hello world',
-        user: { id: 'i', username: 'Vasya' },
-    },
-    {
-        id: '2',
-        text: 'Hello world',
-        user: { id: 'i', username: 'Vanya' },
-    }],
+    comments: [
+        {
+            id: '1',
+            text: 'Hello world',
+            user: { id: 'i', username: 'Vasya' },
+        },
+        {
+            id: '2',
+            text: 'Hello world',
+            user: { id: 'i', username: 'Vanya' },
+        },
+    ],
     isLoading: true,
 };

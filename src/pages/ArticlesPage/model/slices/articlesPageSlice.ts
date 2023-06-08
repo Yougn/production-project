@@ -7,7 +7,10 @@ import { StateSchema } from '@/app/providers/StoreProvider';
 import { ARTICLE_VIEW__LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
 import { SortOrder } from '../../../../shared/types/sort';
 import {
-    Article, ArticleSortField, ArticleType, ArticleView,
+    Article,
+    ArticleSortField,
+    ArticleType,
+    ArticleView,
 } from '../../../../entities/Article/model/types/article';
 import { ArticlesPageSchema } from '../types/ArticlesPageSchema';
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
@@ -36,12 +39,14 @@ const articlesPageSlice = createSlice({
         search: '',
         type: ArticleType.ALL,
         _inited: false,
-
     }),
     reducers: {
         setView: (state, action: PayloadAction<ArticleView>) => {
             state.view = action.payload;
-            localStorage.setItem(ARTICLE_VIEW__LOCALSTORAGE_KEY, action.payload);
+            localStorage.setItem(
+                ARTICLE_VIEW__LOCALSTORAGE_KEY,
+                action.payload,
+            );
         },
         setPage: (state, action: PayloadAction<number>) => {
             state.page = action.payload;
@@ -59,7 +64,9 @@ const articlesPageSlice = createSlice({
             state.search = action.payload;
         },
         initState: (state) => {
-            const view = localStorage.getItem(ARTICLE_VIEW__LOCALSTORAGE_KEY) as ArticleView;
+            const view = localStorage.getItem(
+                ARTICLE_VIEW__LOCALSTORAGE_KEY,
+            ) as ArticleView;
             state.view = view;
             state.limit = view === ArticleView.BIG ? 4 : 9;
             state._inited = true;
@@ -92,7 +99,5 @@ const articlesPageSlice = createSlice({
     },
 });
 
-export const {
-    reducer: articlesPageReducer,
-    actions: articlesPageActions,
-} = articlesPageSlice;
+export const { reducer: articlesPageReducer, actions: articlesPageActions } =
+    articlesPageSlice;

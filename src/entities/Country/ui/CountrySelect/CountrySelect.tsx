@@ -5,10 +5,10 @@ import { ListBox } from '@/shared/ui/Popups';
 import { Country } from '../../model/types/Country';
 
 interface CountrySelectProps {
-  className?: string;
-  value?: Country;
-  onChange?: (value: Country) => void;
-  readonly?: boolean;
+    className?: string;
+    value?: Country;
+    onChange?: (value: Country) => void;
+    readonly?: boolean;
 }
 
 const options = [
@@ -18,25 +18,28 @@ const options = [
     { value: Country.Ukraine, content: Country.Ukraine },
 ];
 
-export const CountrySelect = memo(({
-    className, value, onChange, readonly,
-}: CountrySelectProps) => {
-    const { t } = useTranslation();
+export const CountrySelect = memo(
+    ({ className, value, onChange, readonly }: CountrySelectProps) => {
+        const { t } = useTranslation();
 
-    const onChangeHandler = useCallback((value: string) => {
-        onChange?.(value as Country);
-    }, [onChange]);
+        const onChangeHandler = useCallback(
+            (value: string) => {
+                onChange?.(value as Country);
+            },
+            [onChange],
+        );
 
-    return (
-        <ListBox
-            className={classNames('', {}, [className])}
-            defaultvalue={t('Укажите  страну')}
-            label={t('Укажите  страну')}
-            items={options}
-            value={value}
-            onChange={onChangeHandler}
-            readonly={readonly}
-            direction="top right"
-        />
-    );
-});
+        return (
+            <ListBox
+                className={classNames('', {}, [className])}
+                defaultvalue={t('Укажите  страну')}
+                label={t('Укажите  страну')}
+                items={options}
+                value={value}
+                onChange={onChangeHandler}
+                readonly={readonly}
+                direction="top right"
+            />
+        );
+    },
+);

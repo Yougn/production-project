@@ -8,8 +8,8 @@ import { SidebarItemType } from '../../../model/types/sidebar';
 import cls from './SideBarItem.module.scss';
 
 interface SideBarItemProps {
-  item: SidebarItemType;
-  collapsed: boolean;
+    item: SidebarItemType;
+    collapsed: boolean;
 }
 
 export const SideBarItem = memo(({ item, collapsed }: SideBarItemProps) => {
@@ -27,9 +27,7 @@ export const SideBarItem = memo(({ item, collapsed }: SideBarItemProps) => {
             className={classNames(cls.item, { [cls.collapsed]: collapsed })}
         >
             <item.Icon className={cls.Icon} />
-            <span className={cls.link}>
-                {t(item.text)}
-            </span>
+            <span className={cls.link}>{t(item.text)}</span>
         </AppLink>
     );
 });

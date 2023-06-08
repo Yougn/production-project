@@ -14,7 +14,7 @@ describe('getProfileData.test', () => {
         currency: Currency.EUR,
     };
     test('should return data', () => {
-        const state : DeepPartial<StateSchema> = {
+        const state: DeepPartial<StateSchema> = {
             profile: {
                 data,
             },
@@ -22,7 +22,7 @@ describe('getProfileData.test', () => {
         expect(getProfileData(state as StateSchema)).toEqual(data);
     });
     test('should work with empty state', () => {
-        const state : DeepPartial<StateSchema> = {};
+        const state: DeepPartial<StateSchema> = {};
         expect(getProfileData(state as StateSchema)).toEqual(undefined);
     });
 });

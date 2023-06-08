@@ -8,4 +8,6 @@ import { buildSelector } from '@/shared/store';
 //     (counter: CounterSchema) => counter.value,
 // );
 
-export const [useCounterValue, getCounterValue] = buildSelector((state) => state.counter.value);
+export const [useCounterValue, getCounterValue] = buildSelector(
+    (state) => state.counter.value,
+);
