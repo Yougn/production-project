@@ -1,3 +1,4 @@
+import { buildSelector } from '@/shared/store';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import {
     ArticleSortField,
@@ -27,3 +28,6 @@ export const getArticlesPageSearch = (state: StateSchema) =>
     state?.articlesPage?.search ?? '';
 export const getArticlesPageType = (state: StateSchema) =>
     state?.articlesPage?.type ?? ArticleType.ALL;
+export const [useArticleItemById] = buildSelector(
+    (state: any, id: string) => state.ArticlesPage?.entities[id],
+);
