@@ -31,7 +31,9 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'i18next/no-literal-string': ['error', {
             markupOnly: true,
-            ignoreAttribute: ['data-testid', 'to', 'target', 'justify', 'align', 'gap', 'direction', 'role', 'as', 'border'],
+            ignoreAttribute: ['data-testid', 'to', 'target', 
+            'justify', 'align', 'gap', 'direction', 'role', 
+            'as', 'border', 'feature'],
         }],
         'linebreak-style': 0,
         'max-len': 'off',
