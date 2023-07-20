@@ -1,21 +1,9 @@
 import React from 'react';
-import withMock from 'storybook-addon-mock';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Article } from '@/entities/Article';
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
-
-const article: Article = {
-    id: '1',
-    title: '123',
-    user: { id: '', username: '123' },
-    subtitle: '123asd',
-    img: '',
-    views: 123,
-    createdAt: '',
-    type: [],
-    blocks: [],
-};
 
 export default {
     title: 'features/ArticleRecommendationsList',
@@ -23,16 +11,26 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-    decorators: [withMock],
 } as ComponentMeta<typeof ArticleRecommendationsList>;
 
 const Template: ComponentStory<typeof ArticleRecommendationsList> = (args) => (
     <ArticleRecommendationsList {...args} />
 );
 
+const article: Article = {
+    id: '1',
+    img: '',
+    createdAt: '',
+    views: 123,
+    user: { id: '1', username: '123' },
+    blocks: [],
+    type: [],
+    title: '123',
+    subtitle: 'asfsa',
+};
+
 export const Normal = Template.bind({});
 Normal.args = {};
-
 Normal.decorators = [StoreDecorator({})];
 Normal.parameters = {
     mockData: [
