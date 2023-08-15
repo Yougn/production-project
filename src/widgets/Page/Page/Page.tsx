@@ -10,6 +10,7 @@ import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfin
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useTrottle } from '@/shared/lib/hooks/useTrottle/useTrottle';
 import { TestProps } from '@/shared/types/tests';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface PageProps extends TestProps {
     className?: string;
@@ -52,7 +53,15 @@ export const Page = memo((props: PageProps) => {
         <main
             ref={wrapperRef}
             onScroll={onScroll}
-            className={classNames(cls.page, {}, [className])}
+            className={classNames(
+                toggleFeatures({
+                    name: 'isAppRedesigned',
+                    on: () => cls.PageRedesigned,
+                    off: () => cls.Page,
+                }),
+                {},
+                [className],
+            )}
             id={PAGE_ID}
             data-testid={props['data-testid'] ?? 'Page'}
         >
