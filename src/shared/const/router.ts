@@ -19,6 +19,7 @@ export const getRouteArticleDetails = (id: string) => `/articles/${id}`;
 export const getRouteArticleCreate = () => '/articles/new';
 export const getRouteArticleEdit = (id: string) => `/articles/${id}/edit`;
 export const getRouteAdminPanel = () => '/admin';
+export const getRouteAdmin = () => '/admin';
 export const getRouteForbidden = () => '/forbidden';
 
 // export const RoutePath: Record<AppRoutes, string> = {

@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { Popover as HPopover } from '@headlessui/react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { DropDownDirection } from '@/shared/types/ui';
+import { DropdownDirection } from '@/shared/types/ui';
 import cls from './Popover.module.scss';
 import popupCls from '../styles/popup.module.scss';
 import { mapDirectionClass } from '../styles/consts';
@@ -9,7 +9,7 @@ import { mapDirectionClass } from '../styles/consts';
 interface PopoverProps {
     className?: string;
     trigger: ReactNode;
-    direction?: DropDownDirection;
+    direction?: DropdownDirection;
     children: ReactNode;
 }
 
