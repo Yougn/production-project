@@ -16,11 +16,13 @@ import { ArticlesPageSchema } from '@/pages/ArticlesPage';
 import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { ProfileSchema } from '@/features/editableProfileCard';
 import { ScrollSaveSchema } from '../../../../features/ScrollSave/model/types/ScrollSaveSchema';
+import { UISchema } from '@/features/UI';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
     scrollSave: ScrollSaveSchema;
+    ui: UISchema;
     [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
     // Асинхронные редьюсеры
     loginForm?: LoginSchema;

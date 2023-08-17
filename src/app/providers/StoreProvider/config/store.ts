@@ -12,6 +12,7 @@ import { rtkApi } from '../../../../shared/api/rtkApi';
 import { articlesDetailsPageReducer } from '../../../../pages/ArticleDetailsPage/model/slices/index';
 import { createReducerManager } from './reducerManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
+import { uiReducer } from '@/features/UI';
 
 export function createReduxStore(
     initialState?: StateSchema,
@@ -23,6 +24,7 @@ export function createReduxStore(
         user: userReducer,
         scrollSave: scrollSaveReducer,
         articleDetailsPage: articlesDetailsPageReducer,
+        ui: uiReducer,
         [rtkApi.reducerPath]: rtkApi.reducer,
     };
 

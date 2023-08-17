@@ -33,7 +33,7 @@ module.exports = {
             markupOnly: true,
             ignoreAttribute: ['data-testid', 'to', 'target', 
             'justify', 'align', 'gap', 'direction', 'role', 
-            'as', 'border', 'feature', 'color', 'variant'],
+            'as', 'border', 'feature', 'color', 'variant', ],
         }],
         'linebreak-style': 0,
         'max-len': 'off',
