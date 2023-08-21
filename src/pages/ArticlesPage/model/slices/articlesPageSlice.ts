@@ -8,10 +8,10 @@ import { ARTICLE_VIEW__LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
 import { SortOrder } from '../../../../shared/types/sort';
 import {
     Article,
-    ArticleSortField,
     ArticleType,
     ArticleView,
-} from '../../../../entities/Article/model/types/article';
+    ArticleSortField,
+} from '@/entities/Article';
 import { ArticlesPageSchema } from '../types/ArticlesPageSchema';
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
 

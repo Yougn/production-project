@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import { JsxAttribute, Node, Project, SyntaxKind } from 'ts-morph';
 
 const removedFeatureName = process.argv[2]; // example isArticleEnabled
@@ -125,17 +126,16 @@ const replaceComponent = (node: Node) => {
 };
 
 files.forEach((sourceFile) => {
-    // eslint-disable-next-line consistent-return
     sourceFile.forEachDescendant((node) => {
         if (node.isKind(SyntaxKind.CallExpression) && isToggleFunction(node)) {
-           return  replaceToggleFunction(node);
+            return replaceToggleFunction(node);
         }
 
         if (
             node.isKind(SyntaxKind.JsxSelfClosingElement) &&
             isToggleComponent(node)
         ) {
-           return  replaceComponent(node);
+            return replaceComponent(node);
         }
     });
 });

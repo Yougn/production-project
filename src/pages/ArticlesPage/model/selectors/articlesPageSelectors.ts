@@ -4,7 +4,7 @@ import {
     ArticleSortField,
     ArticleType,
     ArticleView,
-} from '../../../../entities/Article/model/types/article';
+} from '@/entities/Article';
 
 export const getArticlesPageIsLoading = (state: StateSchema) =>
     state?.articlesPage?.isLoading || false;

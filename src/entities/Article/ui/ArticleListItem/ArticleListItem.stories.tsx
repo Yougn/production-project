@@ -1,6 +1,9 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Article, ArticleView } from '../../model/types/article';
+import React from 'react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+
+import { ArticleView } from '../../model/consts/articleConsts';
 import { ArticleListItem } from './ArticleListItem';
+import { Article } from '../../model/types/article';
 
 export default {
     title: 'entities/Article/ArticleListItem',
@@ -10,19 +13,23 @@ export default {
     },
 } as ComponentMeta<typeof ArticleListItem>;
 
+const Template: ComponentStory<typeof ArticleListItem> = (args) => (
+    <ArticleListItem {...args} />
+);
+
 const article = {
     id: '1',
-    title: 'Javascript news jkfnkwjnfvkerjfn',
+    title: 'Javascript news asfasjf asfjkask f',
     subtitle: 'Что нового в JS за 2022 год?',
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
     createdAt: '26.02.2022',
     user: {
         id: '1',
-        username: 'Yougn',
-        avatar: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+        username: 'Ulbi tv',
+        avatar: 'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg',
     },
-    type: ['IT', 'Politics', 'Economics'],
+    type: ['IT', 'SCIENCE', 'POLITICS', 'ECONOMICS'],
     blocks: [
         {
             id: '1',
@@ -84,10 +91,6 @@ const article = {
         },
     ],
 } as Article;
-
-const Template: ComponentStory<typeof ArticleListItem> = (args) => (
-    <ArticleListItem {...args} />
-);
 
 export const Big = Template.bind({});
 Big.args = {
