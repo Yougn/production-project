@@ -1,8 +1,8 @@
 import { Flex, FlexProps } from '../Flex/Flex';
 
-type HStackProps = Omit<FlexProps, 'direction'>;
+type VStackProps = Omit<FlexProps, 'direction'>;
 
-export const VStack = (props: HStackProps) => {
+export const VStack = (props: VStackProps) => {
     const { align = 'start' } = props;
-    return <Flex direction="column" {...props} align={align} />;
+    return <Flex {...props} direction="column" align={align} />;
 };
