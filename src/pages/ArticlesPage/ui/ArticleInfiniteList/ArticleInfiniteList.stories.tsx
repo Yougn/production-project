@@ -1,8 +1,10 @@
+import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { ArticleInfiniteList } from './ArticleInfiniteList';
 
 export default {
-    title: 'pages/ArticlePage/ArticleInfiniteList',
+    title: 'pages/ArticlesPage/ArticleInfiniteList',
     component: ArticleInfiniteList,
     argTypes: {
         backgroundColor: { control: 'color' },

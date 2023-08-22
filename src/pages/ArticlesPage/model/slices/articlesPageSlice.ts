@@ -4,16 +4,16 @@ import {
     PayloadAction,
 } from '@reduxjs/toolkit';
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { ARTICLE_VIEW__LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
-import { SortOrder } from '../../../../shared/types/sort';
 import {
     Article,
     ArticleType,
     ArticleView,
     ArticleSortField,
 } from '@/entities/Article';
-import { ArticlesPageSchema } from '../types/ArticlesPageSchema';
-import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList';
+import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
+import { SortOrder } from '@/shared/types/sort';
+import { ArticlesPageSchema } from '../types/articlesPageSchema';
+import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 
 const articlesAdapter = createEntityAdapter<Article>({
     selectId: (article) => article.id,
@@ -32,19 +32,19 @@ const articlesPageSlice = createSlice({
         entities: {},
         view: ArticleView.SMALL,
         page: 1,
-        limit: 9,
         hasMore: true,
-        order: 'asc',
+        _inited: false,
+        limit: 9,
         sort: ArticleSortField.CREATED,
         search: '',
+        order: 'asc',
         type: ArticleType.ALL,
-        _inited: false,
     }),
     reducers: {
         setView: (state, action: PayloadAction<ArticleView>) => {
             state.view = action.payload;
             localStorage.setItem(
-                ARTICLE_VIEW__LOCALSTORAGE_KEY,
+                ARTICLES_VIEW_LOCALSTORAGE_KEY,
                 action.payload,
             );
         },
@@ -65,7 +65,7 @@ const articlesPageSlice = createSlice({
         },
         initState: (state) => {
             const view = localStorage.getItem(
-                ARTICLE_VIEW__LOCALSTORAGE_KEY,
+                ARTICLES_VIEW_LOCALSTORAGE_KEY,
             ) as ArticleView;
             state.view = view;
             state.limit = view === ArticleView.BIG ? 4 : 9;
@@ -75,8 +75,8 @@ const articlesPageSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(fetchArticlesList.pending, (state, action) => {
-                state.isLoading = true;
                 state.error = undefined;
+                state.isLoading = true;
 
                 if (action.meta.arg.replace) {
                     articlesAdapter.removeAll(state);

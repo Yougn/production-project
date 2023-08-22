@@ -1,16 +1,13 @@
-import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
+import { memo, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getArticleDetailsData } from '@/entities/Article';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { useSelector } from 'react-redux';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { getArticleDetailsData } from '@/entities/Article';
 import { HStack } from '@/shared/ui/redesigned/Stack';
-import { getCanArticleData } from '../../model/selectors/article';
-import {
-    getRouteArticleDetails,
-    getRouteArticles,
-} from '@/shared/const/router';
+import { getCanEditArticle } from '../../model/selectors/article';
+import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
 
 interface ArticleDetailsPageHeaderProps {
     className?: string;
@@ -21,8 +18,8 @@ export const ArticleDetailsPageHeader = memo(
         const { className } = props;
         const { t } = useTranslation();
         const navigate = useNavigate();
+        const canEdit = useSelector(getCanEditArticle);
         const article = useSelector(getArticleDetailsData);
-        const canEdit = useSelector(getCanArticleData);
 
         const onBackToList = useCallback(() => {
             navigate(getRouteArticles());
@@ -30,7 +27,7 @@ export const ArticleDetailsPageHeader = memo(
 
         const onEditArticle = useCallback(() => {
             if (article) {
-                navigate(getRouteArticleDetails(article?.id));
+                navigate(getRouteArticleEdit(article.id));
             }
         }, [article, navigate]);
 
