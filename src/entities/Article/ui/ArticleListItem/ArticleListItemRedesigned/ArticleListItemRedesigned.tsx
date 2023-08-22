@@ -60,7 +60,8 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
                     <Text title={article.title} bold />
                     <Text 
                         title={article.subtitle} 
-                        // size="s" 
+                        // eslint-disable-next-line i18next/no-literal-string
+                        size="s" 
                     />
                     <AppImage
                         fallback={<Skeleton width="100%" height={250} />}
@@ -100,7 +101,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
                 cls[view],
             ])}
         >
-            <Card className={cls.card} border="round">
+            <Card className={cls.card} border="round" padding="0">
                 <AppImage
                     fallback={<Skeleton width={200} height={200} />}
                     alt={article.title}

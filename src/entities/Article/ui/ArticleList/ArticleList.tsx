@@ -1,3 +1,4 @@
+/* eslint-disable i18next/no-literal-string */
 import { useTranslation } from 'react-i18next';
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -57,7 +58,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
             feature="isAppRedesigned"
             on={
                 <HStack
-                    // wrap="wrap"
+                    wrap="wrap"
                     gap="16"
                     className={classNames(cls.ArticleListRedesigned, {}, [])}
                     data-testid="ArticleList"

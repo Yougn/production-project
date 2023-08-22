@@ -1,4 +1,6 @@
+import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import {
     ArticleType,
@@ -26,11 +28,11 @@ const article: Article = {
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
     createdAt: '26.02.2022',
+    type: [ArticleType.IT],
     user: {
         id: '1',
-        username: 'Yougn',
+        username: 'Ulbi tv',
     },
-    type: [ArticleType.IT],
     blocks: [
         {
             id: '1',
