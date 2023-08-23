@@ -7,16 +7,14 @@ describe('getProfileValidateErrors.test', () => {
         const state: DeepPartial<StateSchema> = {
             profile: {
                 validateErrors: [
+                    ValidateProfileError.SERVER_ERROR,
                     ValidateProfileError.INCORRECT_AGE,
-                    ValidateProfileError.INCORRECT_COUNTRY,
-                    ValidateProfileError.NO_DATA,
                 ],
             },
         };
         expect(getProfileValidateErrors(state as StateSchema)).toEqual([
+            ValidateProfileError.SERVER_ERROR,
             ValidateProfileError.INCORRECT_AGE,
-            ValidateProfileError.INCORRECT_COUNTRY,
-            ValidateProfileError.NO_DATA,
         ]);
     });
     test('should work with empty state', () => {

@@ -4,16 +4,16 @@ import { Currency } from '@/entities/Currency';
 import { getProfileData } from './getProfileData';
 
 describe('getProfileData.test', () => {
-    const data = {
-        username: 'admin',
-        age: 30,
-        country: Country.Russia,
-        first: 'Yougn',
-        lastname: 'Shestakov',
-        city: 'Rostov',
-        currency: Currency.EUR,
-    };
-    test('should return data', () => {
+    test('should return error', () => {
+        const data = {
+            username: 'admin',
+            age: 22,
+            country: Country.Ukraine,
+            lastname: 'ulbi tv',
+            first: 'asd',
+            city: 'asf',
+            currency: Currency.USD,
+        };
         const state: DeepPartial<StateSchema> = {
             profile: {
                 data,

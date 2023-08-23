@@ -11,7 +11,9 @@ export const updateProfileData = createAsyncThunk<
     ThunkConfig<ValidateProfileError[]>
 >('profile/updateProfileData', async (_, thunkApi) => {
     const { extra, rejectWithValue, getState } = thunkApi;
+
     const formData = getProfileForm(getState());
+
     const errors = validateProfileData(formData);
 
     if (errors.length) {
@@ -30,6 +32,7 @@ export const updateProfileData = createAsyncThunk<
 
         return response.data;
     } catch (e) {
+        console.log(e);
         return rejectWithValue([ValidateProfileError.SERVER_ERROR]);
     }
 });

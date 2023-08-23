@@ -1,27 +1,30 @@
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import { TestAsyncThunk } from '../../../../../shared/tests/TestAsyncThunk/TestAsyncThunk';
 import { ValidateProfileError } from '../../consts/consts';
 import { updateProfileData } from './updateProfileData';
 
 const data = {
     username: 'admin',
-    age: 30,
-    country: Country.Russia,
-    first: 'Yougn',
-    lastname: 'Shestakov',
-    city: 'Rostov',
-    currency: Currency.EUR,
+    age: 22,
+    country: Country.Ukraine,
+    lastname: 'ulbi tv',
+    first: 'asd',
+    city: 'asf',
+    currency: Currency.USD,
+    id: '1',
 };
 
 describe('updateProfileData.test', () => {
-    test('succsess', async () => {
+    test('success', async () => {
         const thunk = new TestAsyncThunk(updateProfileData, {
             profile: {
                 form: data,
             },
         });
+
         thunk.api.put.mockReturnValue(Promise.resolve({ data }));
+
         const result = await thunk.callThunk();
 
         expect(thunk.api.put).toHaveBeenCalled();
@@ -36,6 +39,7 @@ describe('updateProfileData.test', () => {
             },
         });
         thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }));
+
         const result = await thunk.callThunk();
 
         expect(result.meta.requestStatus).toBe('rejected');

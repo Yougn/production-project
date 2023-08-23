@@ -1,9 +1,9 @@
-import userEvent from '@testing-library/user-event';
 import { screen } from '@testing-library/react';
-import { Country } from '@/entities/Country';
-import { Currency } from '@/entities/Currency';
+import userEvent from '@testing-library/user-event';
+import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
 import { Profile } from '@/entities/Profile';
-import { componentRender } from '@/shared/tests/componentRender/componentRender';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
 import { $api } from '@/shared/api/api';
 import { profileReducer } from '../../model/slice/profileSlice';
 import { EditableProfileCard } from './EditableProfileCard';
@@ -12,11 +12,11 @@ const profile: Profile = {
     id: '1',
     first: 'admin',
     lastname: 'admin',
-    age: 45,
+    age: 465,
     currency: Currency.USD,
-    country: Country.Belarus,
+    country: Country.Kazakhstan,
     city: 'Moscow',
-    username: 'admin123',
+    username: 'admin213',
 };
 
 const options = {
@@ -27,10 +27,7 @@ const options = {
             form: profile,
         },
         user: {
-            authData: {
-                id: '1',
-                username: 'admin',
-            },
+            authData: { id: '1', username: 'admin' },
         },
     },
     asyncReducers: {
@@ -39,8 +36,8 @@ const options = {
 };
 
 describe('features/EditableProfileCard', () => {
-    test('Режим ридонли должен переключиться', async () => {
-        componentRender(<EditableProfileCard id="id" />, options);
+    test('Режим рид онли должен переключиться', async () => {
+        componentRender(<EditableProfileCard id="1" />, options);
         await userEvent.click(
             screen.getByTestId('EditableProfileCardHeader.EditButton'),
         );
@@ -50,7 +47,7 @@ describe('features/EditableProfileCard', () => {
     });
 
     test('При отмене значения должны обнуляться', async () => {
-        componentRender(<EditableProfileCard id="id" />, options);
+        componentRender(<EditableProfileCard id="1" />, options);
         await userEvent.click(
             screen.getByTestId('EditableProfileCardHeader.EditButton'),
         );
@@ -66,12 +63,14 @@ describe('features/EditableProfileCard', () => {
             screen.getByTestId('ProfileCard.lastname'),
             'user',
         );
+
         expect(screen.getByTestId('ProfileCard.firstname')).toHaveValue('user');
         expect(screen.getByTestId('ProfileCard.lastname')).toHaveValue('user');
 
         await userEvent.click(
             screen.getByTestId('EditableProfileCardHeader.CancelButton'),
         );
+
         expect(screen.getByTestId('ProfileCard.firstname')).toHaveValue(
             'admin',
         );
@@ -79,7 +78,7 @@ describe('features/EditableProfileCard', () => {
     });
 
     test('Должна появиться ошибка', async () => {
-        componentRender(<EditableProfileCard id="id" />, options);
+        componentRender(<EditableProfileCard id="1" />, options);
         await userEvent.click(
             screen.getByTestId('EditableProfileCardHeader.EditButton'),
         );
@@ -91,13 +90,13 @@ describe('features/EditableProfileCard', () => {
         );
 
         expect(
-            screen.getByTestId('EditableProfileCard.Errors.Paragraph'),
+            screen.getByTestId('EditableProfileCard.Error.Paragraph'),
         ).toBeInTheDocument();
     });
 
     test('Если нет ошибок валидации, то на сервер должен уйти PUT запрос', async () => {
-        componentRender(<EditableProfileCard id="id" />, options);
         const mockPutReq = jest.spyOn($api, 'put');
+        componentRender(<EditableProfileCard id="1" />, options);
         await userEvent.click(
             screen.getByTestId('EditableProfileCardHeader.EditButton'),
         );
