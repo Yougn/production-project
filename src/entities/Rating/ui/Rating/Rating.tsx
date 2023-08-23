@@ -20,7 +20,7 @@ interface RatingCardProps {
     rate?: number;
 }
 
-export const Rating = memo((props: RatingCardProps) => {
+export const RatingCard = memo((props: RatingCardProps) => {
     const {
         className,
         onAccept,

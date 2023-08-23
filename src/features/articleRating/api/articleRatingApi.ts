@@ -1,5 +1,5 @@
-import { RatingI } from '@/entities/Rating';
 import { rtkApi } from '@/shared/api/rtkApi';
+import { RatingI } from '@/entities/Rating';
 
 interface GetArticleRatingArg {
     userId: string;
@@ -16,8 +16,8 @@ interface RateArticleArg {
 const articleRatingApi = rtkApi.injectEndpoints({
     endpoints: (build) => ({
         getArticleRating: build.query<RatingI[], GetArticleRatingArg>({
-            query: ({ userId, articleId }) => ({
-                url: './article-ratings',
+            query: ({ articleId, userId }) => ({
+                url: '/article-ratings',
                 params: {
                     userId,
                     articleId,
@@ -26,13 +26,12 @@ const articleRatingApi = rtkApi.injectEndpoints({
         }),
         rateArticle: build.mutation<void, RateArticleArg>({
             query: (arg) => ({
-                url: './article-ratings',
+                url: '/article-ratings',
                 method: 'POST',
                 body: arg,
             }),
         }),
     }),
-    overrideExisting: false,
 });
 
 export const useGetArticleRating = articleRatingApi.useGetArticleRatingQuery;

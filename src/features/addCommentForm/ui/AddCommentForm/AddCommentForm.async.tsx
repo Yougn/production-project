@@ -1,6 +1,6 @@
-import { lazy, FC } from 'react';
+import { FC, lazy } from 'react';
 import { AddCommentFormProps } from './AddCommentForm';
 
-export const AddCommentFormmAsync = lazy<FC<AddCommentFormProps>>(
+export const AddCommentFormAsync = lazy<FC<AddCommentFormProps>>(
     () => import('./AddCommentForm'),
 );

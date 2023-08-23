@@ -3,7 +3,6 @@ import { AddCommentFormSchema } from '../types/addCommentForm';
 
 const initialState: AddCommentFormSchema = {
     text: '',
-    error: '',
 };
 
 export const addCommentFormSlice = createSlice({
@@ -16,19 +15,20 @@ export const addCommentFormSlice = createSlice({
     },
     // extraReducers: (builder) => {
     //     builder
-    //         .addCase(addCommentFormByUsername.pending, (state) => {
+    //         .addCase(loginByUsername.pending, (state) => {
     //             state.error = undefined;
     //             state.isLoading = true;
     //         })
-    //         .addCase(addCommentFormByUsername.fulfilled, (state, action) => {
+    //         .addCase(loginByUsername.fulfilled, (state) => {
     //             state.isLoading = false;
     //         })
-    //         .addCase(addCommentFormByUsername.rejected, (state, action) => {
+    //         .addCase(loginByUsername.rejected, (state, action) => {
     //             state.isLoading = false;
     //             state.error = action.payload;
     //         });
     // },
 });
 
+// Action creators are generated for each case reducer function
 export const { actions: addCommentFormActions } = addCommentFormSlice;
 export const { reducer: addCommentFormReducer } = addCommentFormSlice;
