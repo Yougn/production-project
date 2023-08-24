@@ -3,7 +3,7 @@ import { memo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { ListBox } from '@/shared/ui/redesigned/Popups';
 import { Text } from '@/shared/ui/redesigned/Text';
-import { getFeatureFlags, updateFeatureFlag } from '@/shared/lib/features';
+import { getFeatureFlag, updateFeatureFlag } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getUserAuthData } from '@/entities/User';
 import { HStack } from '@/shared/ui/redesigned/Stack';
@@ -17,7 +17,7 @@ interface UiDesignSwitcherProps {
 export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
     const { className } = props;
     const { t } = useTranslation();
-    const isAppRedesigned = getFeatureFlags('isAppRedesigned');
+    const isAppRedesigned = getFeatureFlag('isAppRedesigned');
     const dispatch = useAppDispatch();
     const authData = useSelector(getUserAuthData);
     const [isLoading, setIsLoading] = useState(false);
