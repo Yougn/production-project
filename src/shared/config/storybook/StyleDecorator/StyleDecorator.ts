@@ -1,5 +1,5 @@
-import { Story } from '@storybook/react';
 // eslint-disable-next-line yougn-plugin/layer-imports
 import '@/app/styles/index.scss';
+import { Story } from '@storybook/react';
 
 export const StyleDecorator = (story: () => Story) => story();
