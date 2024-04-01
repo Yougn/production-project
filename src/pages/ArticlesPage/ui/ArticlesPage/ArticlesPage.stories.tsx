@@ -9,7 +9,7 @@ export default {
     component: ArticlesPage,
     argTypes: {
         backgroundColor: { control: 'color' },
-    },
+    }
 } as ComponentMeta<typeof ArticlesPage>;
 
 const Template: ComponentStory<typeof ArticlesPage> = (args) => (
